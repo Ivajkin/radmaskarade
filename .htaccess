@@ -1,0 +1,16 @@
+AddDefaultCharset utf-8
+AddCharset utf-8 *
+<IfModule mod_charset.c>
+    CharsetSourceEnc utf-8
+    CharsetDefault utf-8
+</IfModule>
+
+RewriteEngine on
+RewriteBase /
+RewriteRule ^(~phpMyAdmin-3.5.6-all-languages)(.*)$ - [L]
+RewriteRule ^css/mascarade.css - [L]
+RewriteRule ^img/vk.png - [L]
+RewriteRule ^js/cufon-yui.js - [L]
+RewriteRule ^js/calibri_cufonfonts.js - [L]
+RewriteRule ^(.*)[\.][a-gA-Gi-lI-Ln-sN-Su-zU-Z]{3,4}$ - [L]
+RewriteRule ^(?!index.php)(.*)$ index.php?link=$1 [L]
